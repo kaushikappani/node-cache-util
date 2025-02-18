@@ -1,0 +1,19 @@
+{
+  "name": "node-cache-util",
+  "version": "1.0.0",
+  "description": "cache middleware layer for api's",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "cache",
+    "redis"
+  ],
+  "author": "Appani Kaushik",
+  "license": "ISC",
+  "dependencies": {
+    "redis": "^4.7.0"
+  }
+}
