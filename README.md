@@ -23,7 +23,8 @@ const keyFunction = (req) => `cache:${req.user._id}:${req.originalUrl}`;
 
 const redisCacheUtil = new RedisCacheUtil(redisUrl, ttl, keyFunction);
 
-const router = express.Router();router.route("/")
+const router = express.Router();
+router.route("/")
   .get(redisCacheUtil.cache(), asyncHandler(async (req, res) => {
 
 // Your route handler logic here res.send({ message: "Hello, world!" });
