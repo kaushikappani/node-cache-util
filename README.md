@@ -105,6 +105,26 @@ app.listen(3000, () => console.log('Server listening on port 3000'));
 
 ```
 
+
+### Removing Cached Items (Optional)
+
+Use the `remove()` method to explicitly delete cached entries. This is useful for invalidating cached data after updates.
+
+
+```javascript
+// Example of removing a single cache key:
+const keyToRemove = 'cache:GET:/products';
+const deletedCount = await redisCacheUtil.remove(keyToRemove);
+
+// Example of removing multiple keys:
+const keysToRemove = ['cache:GET:/products', 'cache:POST:/users'];
+const deletedCountMultiple = await redisCacheUtil.remove(keysToRemove);
+
+
+console.log(`Deleted ${deletedCount} keys`);
+console.log(`Deleted ${deletedCountMultiple} keys`);
+```
+
 Remember to install `query-string`: `npm install query-string`
 
 
