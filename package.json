@@ -15,5 +15,10 @@
   "license": "ISC",
   "dependencies": {
     "redis": "^4.7.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaushikappani/node-cache-util"
+  },
+  "homepage": "https://github.com/kaushikappani/node-cache-util#readme"
 }
