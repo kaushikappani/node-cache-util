@@ -10,7 +10,20 @@ To install the package, use npm:
 npm install node-cache-util
 ```
 
-## Usage
+## Simple Usage
+
+``` js
+const RedisCacheUtil  =  require('node-cache-util');
+const redisUrl = process.env.REDIS_URL;
+const ttl = 600;
+const keyFunction = (req) => `cache:${req.user._id}:${req.originalUrl}`;  // based on the requirement 
+const redisCacheUtil = new RedisCacheUtil(redisUrl, ttl, keyFunction);
+
+app.get("/",redisCacheUtil.cache(),(req,res)=>{
+    // your logic
+})
+
+```
 
 Here are examples demonstrating how to use `RedisCacheUtil` in an Express.js application with various `keyFunction` implementations:
 
