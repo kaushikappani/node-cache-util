@@ -37,6 +37,18 @@ class RedisCacheUtil {
             }
         };
     }
+    async remove(keys) {
+        try {
+            const delAsync = util.promisify(this.client.del).bind(this.client);
+            const result = await delAsync(keys);
+            console.log(`Deleted ${result} keys`);
+            return result;
+        } catch (err) {
+            console.error('Redis delete error:', err);
+            throw err;
+        }
+    }
+  
 }
 
 module.exports = RedisCacheUtil;
