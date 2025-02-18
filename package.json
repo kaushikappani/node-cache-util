@@ -1,6 +1,6 @@
 {
   "name": "node-cache-util",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "cache middleware layer for api's",
   "main": "index.js",
   "scripts": {
